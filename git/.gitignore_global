@@ -1,0 +1,11 @@
+# IntelliJ IDEA
+.idea
+*.iml
+*.iws
+.idea-compl
+
+# Other stuff
+.lein-repl-history
+.lein-failures
+completer.hist
+.nrepl-port
