@@ -1,0 +1,15 @@
+-server
+-Xms512m
+-Xmx4096m
+-XX:MaxPermSize=1024m
+-XX:ReservedCodeCacheSize=350m
+-XX:+UseCompressedOops
+
+-XX:+UseConcMarkSweepGCi
+-XX:SoftRefLRUPolicyMSPerMB=50
+-ea
+-Dsun.io.useCanonCaches=false
+-Djava.net.preferIPv4Stack=true
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:-OmitStackTraceInFastThrow
+-Dawt.useSystemAAFontSettings=lcd
