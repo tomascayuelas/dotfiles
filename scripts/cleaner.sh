@@ -11,14 +11,20 @@ MSG_01="Cleaned!"
 USER="$HOME"
 
 # Directories to clean
-DOWNLOADS="${FOLDER_USER}/Descargas"
-TMP="/tmp"
+# DOWNLOADS="${FOLDER_USER}/Descargas"
+TMP="/tmp/"
+VAR_TMP="/var/tmp/"
+
 
 # Array declarations for remove
-FOLDERS=( $DOWNLOADS $TMP )
+FOLDERS=( $TMP $VAR_TMP )
 
 # Cleaning
 for i in ${FOLDERS[@]}; do
 	sudo rm -fr $i/*
 	echo "--> ${i} ${MSG_01}"
 done
+
+sudo apt-get autoremove -y 
+sudo apt-get autoclean
+
