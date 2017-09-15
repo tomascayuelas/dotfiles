@@ -1,9 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-localPath="/home/tomascayuelas/Development/Sources/Own/poupermo-api/"
-remotePath="/home/tomascayuelas/Development/Sources/Own/poupermo-api/"
+sleepTimeInSeconds=120
+localPath=$1
+remotePath=$2
 
 while true; do
     rsync -azvu --delete gdevel:$remotePath $localPath
-    sleep 120
+    sleep $sleepTimeInSeconds
 done

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 eventsToListen="CREATE,CLOSE_WRITE,DELETE,MODIFY,MOVED_FROM,MOVED_TO"
 currentPath=`pwd`
