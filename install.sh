@@ -1,6 +1,17 @@
-#!/bin/sh
+#!/bin/bash
 
-dotfilesPath="${HOME}/Development/Sources/Own/dotfiles"
+
+function checkDotfilePathEnv()
+{
+    messageDotfileNotFound="DotfilePath not found"
+    if [[ ! -v "DOTFILES_PATH" ]]; then
+      echo $messageDotfileNotFound
+      exit
+    fi
+}
+
+checkDotfilePathEnv
+dotfilesPath="$DOTFILES_PATH"
 
 i3PathOrigin="${dotfilesPath}/i3"
 gitPathOrigin="${dotfilesPath}/git"

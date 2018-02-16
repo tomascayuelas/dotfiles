@@ -9,7 +9,7 @@ set $ws2  "2"
 set $ws3  "3"
 set $ws4  "4"
 set $ws5  "5"
-set $ws6  "6" 
+set $ws6  "6"
 set $ws7  "7"
 set $ws8  "8"
 set $ws9  "9"
@@ -80,9 +80,6 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# Xinerama
-force_xinerama yes
-
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -120,20 +117,29 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e mode "$exit"
 set $exit (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$exit" {
-    bindsym l exec --no-startup-id /usr/local/bin/i3lockmod, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym s exec --no-startup-id systemctl hybrid-sleep
-    bindsym h exec --no-startup-id systemctl hibernate
-    bindsym r exec --no-startup-id systemctl reboot
-    bindsym Shift+s exec --no-startup-id systemctl poweroff
+    bindsym l exec $psst ~/.config/i3/scripts/i3exit.sh lock, mode "default"
+    bindsym e exec $psst ~/.config/i3/scripts/i3exit.sh logout, mode "default"
+    bindsym s exec $psst ~/.config/i3/scripts/i3exit.sh suspend, mode "default"
+    bindsym h exec $psst ~/.config/i3/scripts/i3exit.sh hibernate, mode "default"
+    bindsym r exec $psst ~/.config/i3/scripts/i3exit.sh reboot, mode "default"
+    bindsym Shift+s exec $psst ~/.config/i3/scripts/i3exit.sh shutdown
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
+set $displayMode "Set display mode [l]aptop [d]esk-home"
+bindsym $mod+Shift+p mode $displayMode
+mode $displayMode {
+    bindsym l exec ~/.screenlayout/alone.sh, mode "default"
+    bindsym d exec ~/.screenlayout/home-one-monitor.sh, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 # Screen locker
-bindsym $mod+Control+l exec i3-msg workspace 10 && /usr/local/bin/i3lockmod
+bindsym $mod+Control+l exec i3-msg workspace 10 && ~/.config/i3/i3lockmod.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -168,38 +174,26 @@ bindsym $mod+Print exec $psst scrot 'screenshot-%Y-%m-%d-%T.png' -e 'mv $f ~/Pic
 
 # Launch terminal
 bindsym $mod+Return exec urxvt
-bindsym $mod+Shift+Return exec sakura
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    font pango:Source Sans Pro-10 10
-    status_command		i3blocks -c ~/.config/i3/i3blocks.conf
-    mode			dock
-    position			top
-    #tray_output			primary
-    colors {
-    	separator #268bd2
-    	background #002b36
-    	statusline #839496
-    	focused_workspace #fdf6e3 #6c71c4 #fdf6e3
-    	active_workspace #fdf6e3 #6c71c4 #fdf6e3
-    	inactive_workspace #002b36 #586e75 #002b36
-    	urgent_workspace #d33682 #d33682 #fdf6e3
-    }
+    status_command  i3status
+    mode            dock
+    position        top
 }
 
-# Autostart applications for daily use
+# Autostart Applications
 exec $psst compton
-exec $psst gnome-keyring-daemon /usr/lib/polkit-gnome-authentication-agent-1
 exec $psst udiskie -t
-exec $psst feh --bg-fill --randomize ~/Images/Wallpapers
+exec $psst feh --bg-fill -randomize ~/Pictures/Wallpapers
 exec $psst redshift-gtk
+exec $psst clipit
 exec $psst nm-applet
-exec $psst parcellite
+exec $psst pa-applet
 exec $psst /usr/bin/syndaemon -i 0.1s -m 0.1s -k -R
 exec $psst /usr/bin/synclient HorizTwoFingerScroll=1
-exec $psst /usr/bin/pasystray
+exec $psst jetbrains-toolbox
 
 client.focused #0088CC #0088CC #ffffff #dddddd
 client.focused_inactive #333333 #333333 #888888 #292d2e
@@ -231,7 +225,7 @@ for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
 
-# 
+#
 # ---------------------------------------------------------------------
 # Jetbrains
 # ---------------------------------------------------------------------

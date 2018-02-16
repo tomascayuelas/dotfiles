@@ -1,0 +1,8 @@
+! rxvt-unicode - theme
+#include ".Xresources.d/rxvt-unicode/themes/gruvbox-dark.theme"
+
+! rxvt-unicode - config
+#include ".Xresources.d/rxvt-unicode/config.rxvt"
+
+! Fonts
+#include ".Xresources.d/fonts.xrs"
