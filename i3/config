@@ -104,9 +104,6 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# Assign window to a workspace
-for_window [class="Steam"] floating enable
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -173,7 +170,7 @@ bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
 bindsym $mod+Print exec $psst scrot 'screenshot-%Y-%m-%d-%T.png' -e 'mv $f ~/Pictures/Screenshots/'
 
 # Launch terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec urxvtc
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -184,7 +181,6 @@ bar {
 }
 
 # Autostart Applications
-exec $psst compton
 exec $psst udiskie -t
 exec $psst feh --bg-fill -randomize ~/Pictures/Wallpapers
 exec $psst redshift-gtk
