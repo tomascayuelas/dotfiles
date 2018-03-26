@@ -157,27 +157,31 @@ bindsym $mod+r mode "resize"
 bindsym $alt+Tab exec rofi -show window
 
 # Pulse audio volume control
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5%
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5%
-bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 2 -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 2 +5%
+bindsym XF86AudioMute exec pactl set-sink-mute 2 toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute 2 toggle
 
 # Brightness adjusting
-bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # Screenshot with scrot
 bindsym $mod+Print exec $psst scrot 'screenshot-%Y-%m-%d-%T.png' -e 'mv $f ~/Pictures/Screenshots/'
 
 # Launch terminal
-bindsym $mod+Return exec urxvtc
+# bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec termite
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command  i3status
-    mode            dock
-    position        top
+    # status_command  i3status
+    status_command    python ~/.config/i3/pystatus.py
+    #mode              dock
+    position          top
+    workspace_buttons yes
+    font              pango:Hack 10, FontAwesome 9
 }
 
 # Autostart Applications
@@ -195,35 +199,3 @@ client.focused #0088CC #0088CC #ffffff #dddddd
 client.focused_inactive #333333 #333333 #888888 #292d2e
 client.unfocused #333333 #333333 #888888 #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
-
-# ---------------------------------------------------------------------
-# Browser Pop-Ups special properties
-# ---------------------------------------------------------------------
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="bubble"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [window_role="Preferences"] floating enable
-for_window [window_role="Open Files"] floating enable
-for_window [window_type="dialog"] floating enable
-for_window [window_type="menu"] floating enable
-
-# ---------------------------------------------------------------------
-# Steam
-# ---------------------------------------------------------------------
-for_window [class="^Steam$" title="^Friends$"] floating enable
-for_window [class="^Steam$" title="Steam - News"] floating enable
-for_window [class="^Steam$" title=".* - Chat"] floating enable
-for_window [class="^Steam$" title="^Settings$"] floating enable
-for_window [class="^Steam$" title=".* - event started"] floating enable
-for_window [class="^Steam$" title=".* CD key"] floating enable
-for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
-for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
-for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
-for_window [title="^Steam Keyboard$"] floating enable
-
-#
-# ---------------------------------------------------------------------
-# Jetbrains
-# ---------------------------------------------------------------------
-for_window [class="^com-intellij-updater-Runner$" title="^Update$"] floating enable
-for_window [instance="^sun-awt-X11-XDialogPeer$" title="^Complete Installation$"] floating enable
