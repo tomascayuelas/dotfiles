@@ -41,7 +41,7 @@ function xinitrc()
 
 function xresources()
 {
-  ln -s -i ${DOTFILES_PATH}/X/.Xresources.d $HOME/.Xresources.d
+  ln -s -i ${DOTFILES_PATH}/X/.Xresources.d $HOME/
   ln -s -i ${DOTFILES_PATH}/X/.Xresources $HOME/.Xresources
 }
 
