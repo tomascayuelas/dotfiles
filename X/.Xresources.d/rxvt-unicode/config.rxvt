@@ -1,3 +1,4 @@
+! Scrollbar
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.scrollBar_floating: false
@@ -6,4 +7,22 @@ URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: true
 URxvt.scrollTtyKeypress: true
 
-URxvt.font: xft:Bitstream Vera Sans Mono-10
+! Font
+URxvt.font: xft:Terminus:size=10
+
+
+! Fix font space
+URxvt*letterSpace: 0
+
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      true
+
+! Pointer
+URxvt.pointerBlank:         true
+
+! Perl extensions
+URxvt.perl-ext-common:      default,matcher
+URxvt.matcher.button:       1
+URxvt.urlLauncher: firefox
