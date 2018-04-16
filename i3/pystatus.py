@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import logging
 
 from i3pystatus import Status

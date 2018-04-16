@@ -31,7 +31,8 @@ function git()
 
 function i3wm()
 {
-  ln -s -i ${DOTFILES_PATH}/i3 $HOME/.config/
+  rm -irfv ${HOME}/.config/i3
+  ln -s -i ${DOTFILES_PATH}/i3 $HOME/.config/i3
 }
 
 function xinitrc()
