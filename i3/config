@@ -191,7 +191,6 @@ bar {
 exec $psst udiskie -t
 exec $psst feh --bg-fill -randomize ~/Pictures/Wallpapers
 exec $psst redshift-gtk
-exec $psst clipit
 exec $psst nm-applet
 exec $psst pa-applet
 exec $psst /usr/bin/syndaemon -i 0.1s -m 0.1s -k -R
