@@ -176,12 +176,12 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 bindsym $mod+Print exec $psst scrot 'screenshot-%Y-%m-%d-%T.png' -e 'mv $f ~/Pictures/Screenshots/'
 
 # Launch terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec sakura
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command    python3 ~/.config/i3/pystatus.py
+    status_command    py3status -b
     position          top
     workspace_buttons yes
     font              pango:DejaVu Sans Mono, FontAwesome 10
