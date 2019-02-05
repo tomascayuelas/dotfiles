@@ -1,5 +1,3 @@
-DOTFILES_PATH="${HOME}/Development/Sources/Own/dotfiles"
-
 PROMPT_COMMAND="cool_theme"
 
 FIRST_CHARACTER="(O_o)$>"

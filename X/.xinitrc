@@ -1,13 +1,9 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
-eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
-export GPG_AGENT_INFO
-export GNOME_KEYRING_CONTROL
-export GNOME_KEYRING_PID
+if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+  eval $(dbus-launch --sh-syntax --exit-with-session)
+  export $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gnupg)
+fi
 
-eval $(dbus-launch --sh-syntax)
-
-exec compton -cCGb &
-exec urxvtd --quiet &
+#exec compton -cCGb &
 exec i3

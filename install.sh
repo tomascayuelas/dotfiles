@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES_PATH="${HOME}/Development/Sources/Own/dotfiles"
+export DOTFILES_PATH="${HOME}/Development/Own/dotfiles"
 
 function checkDotfilePathEnv()
 {
@@ -40,15 +40,8 @@ function xinitrc()
   ln -s -i ${DOTFILES_PATH}/X/.xinitrc $HOME/.xinitrc
 }
 
-function xresources()
-{
-  ln -s -i ${DOTFILES_PATH}/X/.Xresources.d $HOME/
-  ln -s -i ${DOTFILES_PATH}/X/.Xresources $HOME/.Xresources
-}
-
 bash
 vimEditor
 git
 i3wm
-xresources
 xinitrc
