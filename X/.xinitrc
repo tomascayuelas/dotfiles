@@ -5,5 +5,7 @@ if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
   export $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gnupg)
 fi
 
+export DOTFILES_PATH="/home/tomascayuelas/Development/Own/dotfiles"
+
 #exec compton -cCGb &
 exec i3

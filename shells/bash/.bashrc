@@ -1,3 +1,5 @@
+#!/bin/bash
+
 PROMPT_COMMAND="cool_theme"
 
 FIRST_CHARACTER="(O_o)$>"
