@@ -46,9 +46,15 @@ function xresources()
   ln -s -i ${DOTFILES_PATH}/X/.Xresources $HOME/.Xresources
 }
 
+function karabiner()
+{
+  ln -s -i ${DOTFILES_PATH}/mac/karabiner $HOME/.config/karabiner
+}
+
 bash
 vimEditor
 git
 i3wm
 xresources
 xinitrc
+karabiner

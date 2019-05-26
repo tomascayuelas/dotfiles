@@ -9,3 +9,13 @@
 .lein-failures
 completer.hist
 .nrepl-port
+
+.bloop
+
+
+.bloop
+.metals
+.vscode
+project/.bloop
+.ensime
+.ensime_cache
