@@ -1,4 +1,4 @@
-DOTFILES_PATH="${HOME}/Development/Sources/Own/dotfiles"
+#!/bin/bash
 
 PROMPT_COMMAND="cool_theme"
 

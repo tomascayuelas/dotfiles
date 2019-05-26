@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES_PATH="${HOME}/Development/Sources/Own/dotfiles"
+export DOTFILES_PATH="${HOME}/Development/Own/dotfiles"
 
 function checkDotfilePathEnv()
 {
@@ -40,6 +40,7 @@ function xinitrc()
   ln -s -i ${DOTFILES_PATH}/X/.xinitrc $HOME/.xinitrc
 }
 
+<<<<<<< HEAD
 function xresources()
 {
   ln -s -i ${DOTFILES_PATH}/X/.Xresources.d $HOME/
@@ -51,10 +52,11 @@ function karabiner()
   ln -s -i ${DOTFILES_PATH}/mac/karabiner $HOME/.config/karabiner
 }
 
+=======
+>>>>>>> fe8d7fd31d7f5c276849abf503d32b52a24db2ac
 bash
 vimEditor
 git
 i3wm
-xresources
 xinitrc
 karabiner
