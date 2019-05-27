@@ -1,7 +1,19 @@
+" ========================================================
+" General settings
+" ========================================================
 set nocompatible              " be iMproved, required
+set autoread                  " detect when a file is changed
+set history=1000
+set textwidth=120
+
+set backupdir=~/.vim/tmp,~/.tmp,/var/tmp,/tmp
 scriptencoding utf-8
 set encoding=utf-8
 filetype off                  " required
+
+" ========================================================
+" All plugins needed
+" ========================================================
 
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
@@ -34,6 +46,16 @@ au BufRead,BufNewFile *.sbt set filetype=scala
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Mappings
-map <D-1> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
+
+" ========================================================
+" NERDTree configuration
+" ========================================================
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeMinimaUI = 1
+let g:NERDTreeDirArrows = 1
+let NERDTreeShowExecutableFlag = 0
+" Prevent NerdTree from blocking tmux pane navigation on J and K
+let g:NERDTreeMapJumpPrevSibling=""
+let g:NERDTreeMapJumpNextSibling=""
