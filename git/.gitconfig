@@ -13,9 +13,8 @@
     standup = !"git log --reverse --branches --since=$(if [[ "Mon" == "$(date +%a)" ]]; then echo "last friday"; else echo "yesterday"; fi) --author=$(git config --get user.email) --format=format:'%C(cyan) %ad %C(yellow)%h %Creset %s %Cgreen%d' --date=local"
 
 [user]
-    name = Tomás Cayuelas
-    email = hello@tomascayuelas.com
-
+	name = Tomas Cayuelas
+	email = hello@tomascayuelas.com
 [push]
     default = simple
 
@@ -78,3 +77,7 @@
     added = yellow
     changed = green
     untracked = cyan
+[github]
+	user = tomascayuelas
+[credential]
+	helper = osxkeychain

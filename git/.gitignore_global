@@ -13,9 +13,12 @@ completer.hist
 .bloop
 
 
-.bloop
-.metals
+.bloop/
+.metals/
 .vscode
 project/.bloop
 .ensime
 .ensime_cache
+.php_cs.cache
+project/metals.sbt
+

@@ -1,0 +1,7 @@
+nvim/tags*
+nvim/.netrwhist
+nvim/pythonpath.vim
+nvim/nodepath.vim
+nvim/autoload/plugged/*
+nvim/paths.vim
+nvim/session
