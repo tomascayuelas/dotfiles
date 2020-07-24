@@ -78,6 +78,4 @@
     changed = green
     untracked = cyan
 [github]
-	user = tomascayuelas
-[credential]
-	helper = osxkeychain
+    user = tomascayuelas
