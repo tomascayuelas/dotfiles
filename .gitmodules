@@ -1,0 +1,3 @@
+[submodule "material-awesome"]
+	path = material-awesome
+	url = git@github.com:tomascayuelas/material-awesome.git
