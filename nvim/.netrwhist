@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/Users/tomas.cayuelas/Development/Sources/Own/dotfiles/nvim'
+let g:netrw_dirhist_1='/Users/tomas.cayuelas/Development/Sources/Own/dotfiles'
+let g:netrw_dirhist_0='/Users/tomas.cayuelas/Development/Sources/Own/dotfiles/nvim'
+let g:netrw_dirhist_9='/Users/tomas.cayuelas/Development/Sources/Own/dotfiles'
+let g:netrw_dirhist_8='/Users/tomas.cayuelas/Development/Sources/Own/dotfiles/nvim'
+let g:netrw_dirhist_7='/Users/tomas.cayuelas/Development/Sources/Own/cnczero/stack'
+let g:netrw_dirhist_6='/Users/tomas.cayuelas/Development/Sources/Own/cnczero'
+let g:netrw_dirhist_5='/Users/tomas.cayuelas/Development/Sources/Own/cnczero/stack'
+let g:netrw_dirhist_4='/Users/tomas.cayuelas/Development/Sources/Own/cnczero'
+let g:netrw_dirhist_3='/Users/tomas.cayuelas/Development/Sources/Own/dotfiles/nvim'

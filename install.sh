@@ -52,5 +52,11 @@ function nvim()
   lnCommand nvim .config/nvim
 }
 
+function tig()
+{
+    lnCommand tig/.tigrc .tigrc
+}
+
 git
 nvim
+tig

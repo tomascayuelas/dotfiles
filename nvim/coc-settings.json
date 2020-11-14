@@ -1,0 +1,159 @@
+
+{
+	"metals.statusBarEnabled": true,
+	"metals.superMethodLensesEnabled": true,
+	"metals.enableStripMarginOnTypeFormatting": true,
+	"metals.treeviews.toggleNode": "<CR>",
+	"metals.treeviews.initialWidth": 40,
+	"metals.treeviews.initialViews": [
+		{
+			"name": "metalsCompile",
+			"size": 10,
+			"expanded": []
+		},
+		{
+			"name": "metalsPackages",
+			"size": 40,
+			"expanded": [
+				[
+					"projects:"
+				]
+			]
+		},
+		{
+			"name": "metalsBuild",
+			"size": 15,
+			"expanded": []
+		}
+	],
+	"metals.treeviews.gotoLastChild": "J",
+	"metals.treeviews.gotoParentNode": "p",
+	"metals.treeviews.gotoFirstChild": "K",
+	"metals.treeviews.executeCommand": "r",
+  "codeLens.enable": true,
+  "languageserver": {
+    "metals": {
+      "command": "metals-vim",
+      "rootPatterns": ["build.sbt"],
+      "filetypes": ["scala", "sbt"]
+    }
+  },
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.presets": {
+    ".nvim": {
+      "root-uri": "~/.config/nvim"
+    },
+    "sidebar-left": {
+      "position": "left",
+      "open-action-strategy": "sourceWindow",
+      "toggle": true,
+      "focus": true,
+      "quit-on-open": false,
+      "sources": [
+	{
+      	  "name": "bookmark",
+          "expand": false
+      	},
+      	{
+      	  "name": "buffer",
+      	  "expand": true
+      	},
+      	{
+      	  "name": "file",
+      	  "expand": true
+      	}
+      ]
+    },
+    "floating": {
+      "position": "floating",
+      "open-action-strategy": "sourceWindow"
+    },
+    "floatingTop": {
+      "position": "floating",
+      "floating-position": "center-top",
+      "open-action-strategy": "sourceWindow"
+    },
+    "simplify": {
+      "file-child-template": "[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]"
+    }
+  },
+  "explorer.keyMappings": {
+    "i": false, // cancel default mapkey
+
+    "gk": "expandablePrev",
+    "gj": "expandableNext",
+
+    "*": "toggleSelection",
+    "<tab>": "actionMenu",
+
+    "h": "collapse",
+    "l": ["expandable?", "expand", "open"],
+    "J": ["toggleSelection", "nodeNext"],
+    "K": ["toggleSelection", "nodePrev"],
+    "gl": "expandRecursive",
+    "gh": "collapseRecursive",
+    "<2-LeftMouse>": [
+      "expandable?",
+      ["expanded?", "collapse", "expand"],
+      "open"
+    ],
+    "o": ["expanded?", "collapse", "expand"],
+    "<cr>": ["expandable?", "cd", "open"],
+    "e": "open",
+    "s": "open:split",
+    "S": "open:split:plain",
+    "E": "open:vsplit",
+    "t": "open:tab",
+    "<bs>": "gotoParent",
+    "gp": "preview:labeling",
+
+    "y": "copyFilepath",
+    "Y": "copyFilename",
+    "c": "copyFile",
+    "x": "cutFile",
+    "p": "pasteFile",
+    "d": "delete",
+    "D": "deleteForever",
+
+    "a": "addFile",
+    "A": "addDirectory",
+    "r": "rename",
+
+    ".": "toggleHidden",
+    "R": "refresh",
+
+    "?": "help",
+    "q": "quit",
+    "<esc>": "esc",
+    "X": "systemExecute",
+    "gd": "listDrive",
+
+    "f": "search",
+    "F": "searchRecursive",
+
+    "gf": "gotoSource:file",
+    "gb": "gotoSource:buffer",
+
+    "[[": "sourcePrev",
+    "]]": "sourceNext",
+
+    "[d": "diagnosticPrev",
+    "]d": "diagnosticNext",
+
+    "[c": "gitPrev",
+    "]c": "gitNext",
+    "<<": "gitStage",
+    ">>": "gitUnstage"
+  },
+  "coc.preferences.formatOnSaveFiletypes": [
+    "scala",
+    "css",
+    "markdown",
+    "Markdown",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ]
+}

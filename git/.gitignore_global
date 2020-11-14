@@ -11,10 +11,8 @@ completer.hist
 .nrepl-port
 
 .bloop
-
-
-.bloop/
-.metals/
+.metals
+project/project
 .vscode
 project/.bloop
 .ensime
