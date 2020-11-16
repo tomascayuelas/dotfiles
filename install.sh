@@ -6,3 +6,5 @@ stow -t $HOME git
 stow -t $HOME nvim
 stow -t $HOME tig
 stow -t $HOME qtile
+stow -t $HOME rofi 
+stow -t $HOME zsh

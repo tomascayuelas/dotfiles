@@ -1,1 +1,2 @@
-nvim/autoload/
+nvim/.config/nvim/autoload/
+qtile/.config/qtile/__pycache__/

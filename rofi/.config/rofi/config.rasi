@@ -1,0 +1,7 @@
+configuration {
+  modi: "window,drun,ssh,combi";
+  theme: "Arc-Dark";
+  font: "hack 12";
+  combi-modi: "window,drun,ssh";
+  hide-scrollbar: true;
+}
