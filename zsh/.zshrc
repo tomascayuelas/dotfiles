@@ -98,6 +98,6 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/tomascayuelas/.sdkman"
-[[ -s "/home/tomascayuelas/.sdkman/bin/sdkman-init.sh" ]] && source "/home/tomascayuelas/.sdkman/bin/sdkman-init.sh"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH=/home/tomascayuelas/.gem/ruby/2.7.0/bin:$PATH

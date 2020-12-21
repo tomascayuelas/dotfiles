@@ -33,6 +33,7 @@ call plug#begin(stdpath('config') . '/autoload/bundle')
 
   " Syntax
   Plug 'derekwyatt/vim-scala'
+  Plug 'jiangmiao/auto-pairs'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

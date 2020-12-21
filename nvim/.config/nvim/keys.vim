@@ -1,5 +1,8 @@
 " File explorer
-nmap <space>1 :CocCommand explorer --preset sidebar-left<CR>
+nmap <A-1> :CocCommand explorer --preset sidebar-left<CR>
+
+" Terminal
+nmap <A-0> :terminal<CR>
 
 " Fzf 
 " ------------------------------

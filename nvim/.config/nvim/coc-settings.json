@@ -1,35 +1,36 @@
 
 {
-	"metals.statusBarEnabled": true,
-	"metals.superMethodLensesEnabled": true,
-	"metals.enableStripMarginOnTypeFormatting": true,
-	"metals.treeviews.toggleNode": "<CR>",
-	"metals.treeviews.initialWidth": 40,
-	"metals.treeviews.initialViews": [
-		{
-			"name": "metalsCompile",
-			"size": 10,
-			"expanded": []
-		},
-		{
-			"name": "metalsPackages",
-			"size": 40,
-			"expanded": [
-				[
-					"projects:"
-				]
+  "metals.javaHome": "/usr/lib/jvm/default",
+  "metals.statusBarEnabled": true,
+  "metals.superMethodLensesEnabled": true,
+"metals.enableStripMarginOnTypeFormatting": true,
+"metals.treeviews.toggleNode": "<CR>",
+"metals.treeviews.initialWidth": 40,
+"metals.treeviews.initialViews": [
+	{
+		"name": "metalsCompile",
+		"size": 10,
+		"expanded": []
+	},
+	{
+		"name": "metalsPackages",
+		"size": 40,
+		"expanded": [
+			[
+				"projects:"
 			]
-		},
-		{
-			"name": "metalsBuild",
-			"size": 15,
-			"expanded": []
-		}
-	],
-	"metals.treeviews.gotoLastChild": "J",
-	"metals.treeviews.gotoParentNode": "p",
-	"metals.treeviews.gotoFirstChild": "K",
-	"metals.treeviews.executeCommand": "r",
+		]
+	},
+	{
+		"name": "metalsBuild",
+		"size": 15,
+		"expanded": []
+	}
+],
+"metals.treeviews.gotoLastChild": "J",
+"metals.treeviews.gotoParentNode": "p",
+"metals.treeviews.gotoFirstChild": "K",
+"metals.treeviews.executeCommand": "r",
   "codeLens.enable": true,
   "languageserver": {
     "metals": {
@@ -155,5 +156,6 @@
     "javascriptreact",
     "typescript",
     "typescriptreact"
-  ]
+  ],
+  "coc.preferences.enableFloatHighlight": true
 }
