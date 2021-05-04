@@ -1,3 +1,6 @@
-nvim/.config/nvim/autoload/
-nvim/autoload/
-nvim/.config/nvim/.netrwhist
+/venv
+.metals
+.idea
+backups/
+/editors/nvim/autoload/
+/editors/nvim/.netrwhist

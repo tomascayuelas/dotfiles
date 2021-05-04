@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+
+import time
+
+import sys
+
+dateToConvert = sys.argv
+
+
+# year = input("Year:")
+# month = input("Month:")
+# day = input("Day:")
+# hour = input("Hour:")
+# minutes = input("Minutes:")
+# seconds = input("Seconds:")
+
+# timestamp = time.mktime(time.strptime(year + '-' + month + '-' + day + ' ' + hour + ':' + minutes + ':' + seconds, '%Y-%m-%d %H:%M:%S'))
+timestamp = time.mktime(time.strptime(dateToConvert[1] + '-' + dateToConvert[2] + '-' + dateToConvert[3] 
+    + ' ' + dateToConvert[4] + ':' + dateToConvert[5] + ':' + dateToConvert[6], '%Y-%m-%d %H:%M:%S'))
+
+print(round(timestamp) * 1000)

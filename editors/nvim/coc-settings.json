@@ -1,0 +1,15 @@
+{
+  "codeLens.enable": true,
+  "metals.statusBarEnabled": true,
+  "metals.ammoniteJvmProperties": [
+    "-Xmx1G"
+  ],
+  "metals.superMethodLensesEnabled": false,
+  "metals.showInferredType": false,
+  "metals.showImplicitArguments": false,
+  "metals.showImplicitConversionsAndClasses": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "scala",
+    "json"
+  ]
+}

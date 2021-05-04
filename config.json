@@ -1,0 +1,35 @@
+{
+  "paths": {
+    "dotfiles": "/Sources/Own/dotfiles",
+    "backups": "/Sources/Own/dotfiles/backups",
+    "apps": "/.config",
+    "scripts": "/.scripts"
+  },
+  "scripts": [
+    "cleaner"
+  ],
+  "apps": {
+    "terminals": [
+      "alacritty",
+      "kitty"
+    ],
+    "vcs": [
+      "tig",
+      "git"
+    ],
+    "shells": [
+      "zsh"
+    ],
+    "desktop-environment": [
+      "awesome",
+      "herbstluftwm",
+      "picom",
+      "polybar",
+      "rofi",
+      "x11"
+    ],
+    "editors": [
+      "nvim"
+    ]
+  }
+}
