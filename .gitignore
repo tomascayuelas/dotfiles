@@ -4,3 +4,4 @@
 backups/
 /editors/nvim/autoload/
 /editors/nvim/.netrwhist
+/shells/zsh/.zcompdump*
