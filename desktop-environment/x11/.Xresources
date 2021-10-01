@@ -1,5 +1,5 @@
 ! For Xft.dpi, using integer multiples of 96 usually works best, e.g. 192 for 200% scaling. 
-Xft.dpi: 192
+Xft.dpi: 96
 
 ! These might also be useful depending on your monitor and personal preference:
 Xft.autohint: 0

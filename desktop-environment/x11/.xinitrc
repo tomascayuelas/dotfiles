@@ -28,6 +28,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
-exec awesome -c $HOME/.config/awesome/rc.lua
+#exec awesome -c $HOME/.config/awesome/rc.lua
 #exec qtile start -c $HOME/.config/qtile/config.py
-#exec herbstluftwm -c $HOME/.config/herbstluftwm/autostart
+exec herbstluftwm -c $HOME/.config/herbstluftwm/autostart
+#exec startxfce4

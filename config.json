@@ -1,7 +1,7 @@
 {
   "paths": {
-    "dotfiles": "/Sources/Own/dotfiles",
-    "backups": "/Sources/Own/dotfiles/backups",
+    "dotfiles": "/Sources/dotfiles",
+    "backups": "/Sources/dotfiles/backups",
     "apps": "/.config",
     "scripts": "/.scripts"
   },

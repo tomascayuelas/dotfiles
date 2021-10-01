@@ -1,0 +1,2 @@
+R = require
+require 'nvim'
