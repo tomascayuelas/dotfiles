@@ -69,6 +69,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["auto-pairs"] = {
+    loaded = true,
+    path = "/home/tomascayuelas/.local/share/nvim/site/pack/packer/start/auto-pairs"
+  },
   ["material.nvim"] = {
     config = { "\27LJ\1\2g\0\0\2\0\5\0\b4\0\0\0007\0\1\0003\1\2\0>\0\2\0014\0\3\0%\1\4\0>\0\2\1G\0\1\0\25colorscheme material\bCMD\1\0\1\19material_style\14palenight\6g\rVariable\0" },
     loaded = true,
@@ -87,6 +91,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tomascayuelas/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
+  ["quick-scope"] = {
+    loaded = true,
+    path = "/home/tomascayuelas/.local/share/nvim/site/pack/packer/start/quick-scope"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/home/tomascayuelas/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim"
@@ -95,6 +103,14 @@ _G.packer_plugins = {
     config = { "\27LJ\1\0026\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\27nvim.plugins.telescope\frequire\0" },
     loaded = true,
     path = "/home/tomascayuelas/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["vim-smoothie"] = {
+    loaded = true,
+    path = "/home/tomascayuelas/.local/share/nvim/site/pack/packer/start/vim-smoothie"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/tomascayuelas/.local/share/nvim/site/pack/packer/start/vim-surround"
   }
 }
 

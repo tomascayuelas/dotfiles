@@ -37,7 +37,7 @@ for appFolder in config['apps']:
         for app in config['apps'][appFolder]:
             if os.path.isdir(dotfilesPath + "/" + appFolder + "/" + app):
                 print("--> Installed <-- [{0}]".format(app.capitalize()))
-                if app == ("x11" or "zsh"):
+                if app == ("zsh" or "x11"):
                     for configFile in os.listdir(dotfilesPath + "/" + appFolder + "/" + app):
                         remove_original(homePath + "/" + configFile)
                         link(dotfilesPath + "/" + appFolder + "/" + app + "/" + configFile, homePath + "/" + configFile)
@@ -47,7 +47,5 @@ for appFolder in config['apps']:
 
 for script in config['scripts']:
     if os.path.isdir(dotfilesPath + "/scripts"):
-        scriptFiles = os.listdir(dotfilesPath + "/scripts")
-        for scriptFile in scriptFiles:
-            remove_original(scriptsPath + "/" + scriptFile)
-            link(dotfilesPath + "/scripts/" + scriptFile, scriptsPath + "/" + scriptFile)
+       remove_original(scriptsPath)
+       link(dotfilesPath + "/scripts", scriptsPath)
