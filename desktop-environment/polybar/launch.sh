@@ -6,9 +6,9 @@ echo "---" | tee -a /tmp/polybar_main.log
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-LEFT="DP1"
+LEFT="DP2"
 PRIMARY=$(xrandr --listactivemonitors | grep -i "+\*" | awk '{print $4}')
-RIGHT="DP2-8"
+RIGHT="DP1-9"
 
 if [ -n "$PRIMARY" ]; then
   herbstclient pad 0 27 0 0 0

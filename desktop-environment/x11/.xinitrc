@@ -21,14 +21,16 @@ fi
 # cursor
 xsetroot -cursor_name left_ptr
 
-# screen sleep 5min
-xset dpms 300 
+# screen sleep
+xset dpms 600 
 
 # start ssh-agent with X so agent is accessible
 eval $(ssh-agent)
 
 #exec awesome -c $HOME/.config/awesome/rc.lua
-#exec qtile start -c $HOME/.config/qtile/config.py
 #exec herbstluftwm -c $HOME/.config/herbstluftwm/autostart
+#exec spectrwm -c $HOME/.config/spectrwm/spectrwm.conf
 #exec startxfce4
-exec xmonad
+#exec xmonad
+#exec qtile start -c $HOME/.config/qtile/config.py
+exec startplasma-x11 
