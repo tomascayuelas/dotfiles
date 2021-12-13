@@ -15,12 +15,13 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 scriptsPath="${HOME}/.scripts"
-cargoPath="${HOME}/.cargo/bin"
-rubyPath="${HOME}/.gem/ruby/2.7.0/bin"
+cargoBinPath="${HOME}/.cargo/bin"
+localBinPath="${HOME}/.local/bin"
+rubyBinPath="${HOME}/.gem/ruby/2.7.0/bin"
 
 # User configuration
 export LANG=en_US.UTF-8
-export PATH=$rubyPath:$scriptsPath:$cargoPath:$PATH
+export PATH=$rubyBinPath:$scriptsPath:$cargoBinPath:$localBinPath:$PATH
 export JAVA_HOME=/usr/lib/jvm/default
 export WIRELESS="wlp2s0"
 export ETHERNET="enp0s20f0u1u3"

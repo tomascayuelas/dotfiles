@@ -27,10 +27,7 @@ xset dpms 600
 # start ssh-agent with X so agent is accessible
 eval $(ssh-agent)
 
-#exec awesome -c $HOME/.config/awesome/rc.lua
-#exec herbstluftwm -c $HOME/.config/herbstluftwm/autostart
-#exec spectrwm -c $HOME/.config/spectrwm/spectrwm.conf
-#exec startxfce4
-#exec xmonad
-#exec qtile start -c $HOME/.config/qtile/config.py
-exec startplasma-x11 
+lxpolkit &
+
+exec herbstluftwm -c $HOME/.config/herbstluftwm/autostart
+

@@ -11,7 +11,8 @@ function link(){
 }
 
 # Desktop Environment
-link desktop-environment/qtile .config/qtile
+link desktop-environment/herbstluftwm .config/herbstluftwm
+link desktop-environment/polybar .config/polybar
 link desktop-environment/dunst .config/dunst
 link desktop-environment/rofi .config/rofi
 link desktop-environment/x11/.xinitrc .xinitrc

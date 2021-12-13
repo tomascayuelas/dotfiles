@@ -6,3 +6,5 @@ backups/
 /editors/nvim/.netrwhist
 /shells/zsh/.zcompdump*
 /editors/nvim/pack/
+editors/nvim/plugin/packer_compiled.lua
+
