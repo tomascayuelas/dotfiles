@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+# Simple and easy
+stow -t $HOME alacritty
+stow -t $HOME dunst
+stow -t $HOME git 
+stow -t $HOME herbstluftwm
+stow -t $HOME htop
+stow -t $HOME nvim
+stow -t $HOME polybar
+stow -t $HOME rofi
+stow -t $HOME scripts
+stow -t $HOME x11
+stow -t $HOME zsh
