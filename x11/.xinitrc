@@ -29,5 +29,6 @@ eval $(ssh-agent)
 
 lxpolkit &
 
-exec herbstluftwm -c $HOME/.config/herbstluftwm/autostart
-#exec openbox-session
+#exec herbstluftwm -c $HOME/.config/herbstluftwm/autostart
+exec openbox-session
+#exec sway

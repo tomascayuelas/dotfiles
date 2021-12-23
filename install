@@ -13,3 +13,5 @@ stow -t $HOME rofi
 stow -t $HOME scripts
 stow -t $HOME x11
 stow -t $HOME zsh
+stow -t $HOME picom
+stow -t $HOME openbox
