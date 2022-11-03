@@ -7,12 +7,13 @@ I'm [@tomascayuelas](https://github.com/tomascayuelas/). Welcome to my [dot]file
 <br>
 
 # Information
-- OS: [Manjaro Linux](https://manjaro.org/)
-- WM: [LeftWM](https://github.com/leftwm/leftwm)
+- Operating System: [Manjaro Linux](https://manjaro.org/)
+- Window Manager: [LeftWM](https://github.com/leftwm/leftwm)
+- Notification Daemon: [Wired](https://github.com/Toqozz/wired-notify)
 
 <br>
 
-## Essential packages
+## Packages
 - [Alacritty](https://github.com/alacritty/alacritty) - A fast, cross-platform, OpenGL terminal emulator
 - [Rofi](https://github.com/davatorium/rofi) - A window switcher, Application launcher and dmenu replacement
 - [ZSH](https://github.com/zsh-users/zsh) - Shell with lots of features
@@ -23,14 +24,15 @@ I'm [@tomascayuelas](https://github.com/tomascayuelas/). Welcome to my [dot]file
 - [fzf](https://github.com/junegunn/fzf) - A general-purpose command-line fuzzy finder
 - [htop](https://htop.dev/) - A interactive process viewer
 - [exa](https://github.com/ogham/exa) - A modern replacement for ls
-- [bat](https://github.com/sharkdp/bat) -  A cat(1) clone with syntax highlighting and Git integration.
-- [jq](https://github.com/stedolan/jq) - A lightweight and flexible command-line JSON processor.
-- [yq](https://github.com/mikefarah/yq) - A lightweight and portable command-line YAML, JSON and XML processo
-- [fzf](https://github.com/junegunn/fzf) - A general-purpose command-line fuzzy finder.
+- [bat](https://github.com/sharkdp/bat) -  A cat(1) clone with syntax highlighting and Git integration
+- [jq](https://github.com/stedolan/jq) - A lightweight and flexible command-line JSON processor
+- [yq](https://github.com/mikefarah/yq) - A lightweight and portable command-line YAML, JSON and XML processor
+- [fzf](https://github.com/junegunn/fzf) - A general-purpose command-line fuzzy finder
+- [Wired](https://github.com/Toqozz/wired-notify) - A light and fully customizable notification daemon
 
 <br>
 
-### ZSH - Plugins
+## ZSH - Plugins
 - [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) - OH-MY-ZSH!!!
 - [docker](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker) - Adds auto-completion and aliases for docker
 - [nvm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm) - Adds autocompletion for nvm

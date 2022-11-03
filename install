@@ -1,19 +1,17 @@
 #!/bin/bash
 
-fontsPath="${HOME}/.local/share/fonts"
-binariesPath="${HOME}/.local/bin"
-
 starter() {
   local apps=(alacritty htop zsh fzf exa jq neovim stow bat arandr rofi nitrogen xorg-xsetroot xclip flameshot xorg-xset)
   local configs=(alacritty git htop nvim scripts x11 zsh leftwm eww)
 
   # Installing all applications and other stuff
-  installer "${apps[@]}"
+  pacmanInstaller "${apps[@]}"
 
   # Installing other packages and utils manually
   nvmInstaller
   sdkmanInstaller
   rustupInstaller
+  wiredInstaller
 
   # Simplele and easy
   linker "${configs[@]}"
@@ -30,7 +28,7 @@ exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
-installer() {
+pacmanInstaller() {
   echo ">> Installing applications: ${*}"
   sudo pacman -S --noconfirm --needed --noprogressbar "$@"
 
@@ -80,6 +78,17 @@ rustupInstaller() {
   fi
 
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+}
+
+wiredInstaller() {
+  if [ -d "${HOME}/Sources/NotMine/wired-notify" ]; then
+    echo "Info: wired already installed."
+    return 1
+  fi
+
+  git clone https://github.com/Toqozz/wired-notify.git ${HOME}/Sources/NotMine/wired-notify
+  cd ${HOME}/Sources/NotMine/wired-notify && cargo build --release
+  sudo install -s -Dm755 ${HOME}/Sources/NotMine/wired-notify/target/release/wired -t /usr/bin
 }
 
 starter
