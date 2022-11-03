@@ -40,3 +40,7 @@ I'm [@tomascayuelas](https://github.com/tomascayuelas/). Welcome to my [dot]file
 - [fzf](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf) - A fuzzy auto-completion and key bindings.
 - [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) - Provides many aliases and a few useful functions
 - [kubectl](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl) - Adds completion for the Kubernetes cluster manager and some aliases
+
+
+## Thanks
+- to [Itsnexn](https://github.com/Itsnexn/dotfiles) dotfiles
