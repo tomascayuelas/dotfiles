@@ -15,9 +15,6 @@
     scratchpad: [
         (name: "Alacritty", value: "alacritty", x: 0.15, y: 0.1, height: 0.7, width: 0.7),
     ],
-    gutter: [
-      ( side: Left, value: 4),
-    ],
     window_rules: [],
     disable_current_tag_swap: false,
     disable_tile_drag: false,
