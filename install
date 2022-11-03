@@ -5,7 +5,7 @@ binariesPath="${HOME}/.local/bin"
 
 starter() {
   local apps=(alacritty htop zsh fzf exa jq neovim stow bat arandr rofi nitrogen xorg-xsetroot xclip flameshot xorg-xset)
-  local configs=(alacritty git htop nvim scripts x11 zsh leftwm)
+  local configs=(alacritty git htop nvim scripts x11 zsh leftwm eww)
 
   # Installing all applications and other stuff
   installer "${apps[@]}"
