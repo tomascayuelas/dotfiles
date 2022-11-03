@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+
+if [ -x "$(command -v nitrogen)" ]; then
+  nitrogen --restore 
+fi
+
+leftwm-command "UnloadTheme"
+
+pkill picom
+pkill wired
+
+if [ -x "$(command -v eww)" ]; then
+  eww kill
+fi

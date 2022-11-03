@@ -2,3 +2,4 @@ nvim/.config/nvim/autoload/
 nvim/.config/nvim/.netrwhist
 nvim/.config/nvim/pack/
 nvim/.config/nvim/plugin/packer_compiled.lua
+.idea/

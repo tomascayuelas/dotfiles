@@ -1,0 +1,69 @@
+#![enable(implicit_some)]
+(
+    modkey: "Mod4",
+    mousekey: "Mod4",
+    workspaces: [],
+    tags: [ "1", "2", "3", "4", "5", "6", ],
+    max_window_width: None,
+    layouts: [
+        MainAndVertStack,
+        MainAndDeck,
+        Monocle,
+    ],
+    layout_mode: Tag,
+    insert_behavior: Bottom,
+    scratchpad: [
+        (name: "Alacritty", value: "alacritty", x: 0.15, y: 0.1, height: 0.7, width: 0.7),
+    ],
+    gutter: [
+      ( side: Left, value: 4),
+    ],
+    window_rules: [],
+    disable_current_tag_swap: false,
+    disable_tile_drag: false,
+    disable_window_snap: true,
+    focus_behaviour: Sloppy,
+    focus_new_windows: true,
+    single_window_border: true,
+    sloppy_mouse_follows_focus: false,
+    keybind: [
+        (command: Execute, value: "rofi -show drun -show-icons", modifier: ["modkey"], key: "d"),
+        (command: Execute, value: "rofi -show window -show-icons", modifier: ["Alt"], key: "Tab"),
+        (command: Execute, value: "alacritty", modifier: ["modkey", "Shift"], key: "Return"),
+        (command: ToggleScratchPad, value: "Alacritty", modifier: ["modkey"], key: "o"),
+
+        (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
+
+        (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
+        (command: MoveToLastWorkspace, value: "", modifier: ["modkey", "Shift"], key: "w"),
+        (command: SwapTags, value: "", modifier: ["modkey"], key: "w"),
+
+        (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "c"),
+
+        (command: MoveWindowUp, value: "", modifier: ["modkey", "Shift"], key: "l"),
+        (command: MoveWindowDown, value: "", modifier: ["modkey", "Shift"], key: "k"),
+        (command: MoveWindowTop, value: "", modifier: ["modkey"], key: "Return"),
+        (command: FocusWindowUp, value: "", modifier: ["modkey"], key: "l"),
+        (command: FocusWindowDown, value: "", modifier: ["modkey"], key: "k"),
+
+        (command: NextLayout, value: "", modifier: ["modkey" ], key: "space"),
+
+        (command: FocusWorkspaceNext, value: "", modifier: ["modkey"], key: "semicolon"),
+        (command: FocusWorkspacePrevious, value: "", modifier: ["modkey"], key: "j"),
+
+        (command: GotoTag, value: "1", modifier: ["modkey"], key: "1"),
+        (command: GotoTag, value: "2", modifier: ["modkey"], key: "2"),
+        (command: GotoTag, value: "3", modifier: ["modkey"], key: "3"),
+        (command: GotoTag, value: "4", modifier: ["modkey"], key: "4"),
+        (command: GotoTag, value: "5", modifier: ["modkey"], key: "5"),
+        (command: GotoTag, value: "6", modifier: ["modkey"], key: "6"),
+
+        (command: MoveToTag, value: "1", modifier: ["modkey", "Shift"], key: "1"),
+        (command: MoveToTag, value: "2", modifier: ["modkey", "Shift"], key: "2"),
+        (command: MoveToTag, value: "3", modifier: ["modkey", "Shift"], key: "3"),
+        (command: MoveToTag, value: "4", modifier: ["modkey", "Shift"], key: "4"),
+        (command: MoveToTag, value: "5", modifier: ["modkey", "Shift"], key: "5"),
+        (command: MoveToTag, value: "6", modifier: ["modkey", "Shift"], key: "6"),
+    ],
+    state_path: None,
+)

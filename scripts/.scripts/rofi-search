@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+declare -A searchEngines
+
+searchEngines=(
+  ["duckduckgo"]="https://www.duckduckgo.com/?q="
+  ["google"]="https://www.google.com/search?q="
+  ["github"]="https://github.com/search?q="
+  ["youtube"]="https://www.youtube.com/results?search_query="
+  ["stackoverflow"]="http://stackoverflow.com/search?q="
+)
+
+# List for rofi
+engineListGenerator() {
+    for i in "${!searchEngines[@]}"
+    do
+      echo "$i"
+    done
+}
+
+search() {
+  searchEngine=$( (engineListGenerator) | rofi -dmenu -matching normal -no-custom -p "Search Engine >>" )
+
+  if [[ -n "$searchEngine" ]]; then
+    query=$( (echo ) | rofi  -dmenu -matching normal -p "Query >>" )
+
+    if [[ -n "$query" ]]; then
+      xdg-open "${searchEngines[$searchEngine]}$query"
+    fi
+  fi
+
+  exit 1
+}
+
+search
+
+exit 0

@@ -1,17 +1,85 @@
 #!/bin/bash
 
+fontsPath="${HOME}/.local/share/fonts"
+binariesPath="${HOME}/.local/bin"
 
-# Simple and easy
-stow -t $HOME alacritty
-stow -t $HOME dunst
-stow -t $HOME git 
-stow -t $HOME herbstluftwm
-stow -t $HOME htop
-stow -t $HOME nvim
-stow -t $HOME polybar
-stow -t $HOME rofi
-stow -t $HOME scripts
-stow -t $HOME x11
-stow -t $HOME zsh
-stow -t $HOME picom
-stow -t $HOME openbox
+starter() {
+  local apps=(alacritty htop zsh fzf exa jq neovim stow bat arandr rofi nitrogen xorg-xsetroot xclip flameshot xorg-xset)
+  local configs=(alacritty git htop nvim scripts x11 zsh leftwm)
+
+  # Installing all applications and other stuff
+  installer "${apps[@]}"
+
+  # Installing other packages and utils manually
+  nvmInstaller
+  sdkmanInstaller
+  rustupInstaller
+
+  # Simplele and easy
+  linker "${configs[@]}"
+
+  if [ "$SHELL" != "$(which zsh)" ]; then
+    echo ">> Activating ZSH shell for $USER, for the next login"
+    chsh -s /usr/bin/zsh "$USER"
+  fi
+
+  exit 1
+}
+
+exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
+installer() {
+  echo ">> Installing applications: ${*}"
+  sudo pacman -S --noconfirm --needed --noprogressbar "$@"
+
+  if [ ! -d ~/.oh-my-zsh ]; then
+    echo ">> Installing extra packages/plugins/tools: oh-my-zsh"
+    git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+  fi
+}
+
+linker() {
+  local array=("$@")
+
+  echo ">> Linking config files: ${*}"
+  cd $HOME/Sources/dotfiles
+
+  for config in "${array[@]}"; do
+    if [ "$config" = "zsh" ]; then
+      stow --adopt -t "$HOME" "$config"
+    else
+      stow -t "$HOME" "$config"
+    fi
+  done
+}
+
+nvmInstaller() {
+  if [ -d "${HOME}/.nvm/.git" ];then
+    echo "Info: nvm already installed."
+    return 1
+  fi
+
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+}
+
+sdkmanInstaller() {
+  if [ -d "${HOME}/.sdkman" ]; then
+    echo "Info: sdkman already installed."
+    return 1
+  fi
+
+  curl -s "https://get.sdkman.io" | zsh
+}
+
+rustupInstaller() {
+  if [ -d "${HOME}/.rustup" ]; then
+    echo "Info: rustup already installed."
+    return 1
+  fi
+
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+}
+
+starter

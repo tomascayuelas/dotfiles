@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+downloadsPath="${HOME}/Downloads"
+tmpPath="/tmp"
+
+allFolderToClean=( "$tmpPath" "$downloadsPath" )
+
+for i in "${allFolderToClean[@]}"; do
+  rm -fr ${i}/{*,.*} 2> /dev/null
+  echo "- $i -> clean!"
+done
