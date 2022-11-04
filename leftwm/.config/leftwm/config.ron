@@ -27,7 +27,8 @@
         (command: Execute, value: "rofi -show drun -show-icons", modifier: ["modkey"], key: "d"),
         (command: Execute, value: "rofi -show window -show-icons", modifier: ["Alt"], key: "Tab"),
         (command: Execute, value: "alacritty", modifier: ["modkey", "Shift"], key: "Return"),
-        (command: ToggleScratchPad, value: "Alacritty", modifier: ["modkey"], key: "o"),
+        (command: ToggleScratchPad, value: "Alacritty", modifier: ["modkey"], key: "t"),
+        (command: Execute, value: "flameshot gui", modifier: ["modkey", "Shift"], key: "p"),
 
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
 
