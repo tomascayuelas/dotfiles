@@ -7,15 +7,16 @@
     max_window_width: None,
     layouts: [
         MainAndVertStack,
-        MainAndDeck,
         Monocle,
+        MainAndDeck,
     ],
     layout_mode: Tag,
     insert_behavior: Bottom,
     scratchpad: [
         (name: "Alacritty", value: "alacritty", x: 0.15, y: 0.1, height: 0.7, width: 0.7),
+        (name: "Notes", value: "obsidian", x: 0.15, y: 0.1, height: 0.7, width: 0.7),
+        (name: "Ranger", value: "alacritty -t Ranger -e ranger", x: 0.15, y: 0.1, height: 0.7, width: 0.7),
     ],
-    window_rules: [],
     disable_current_tag_swap: false,
     disable_tile_drag: false,
     disable_window_snap: true,
@@ -27,27 +28,31 @@
         (command: Execute, value: "rofi -show drun -show-icons", modifier: ["modkey"], key: "d"),
         (command: Execute, value: "rofi -show window -show-icons", modifier: ["Alt"], key: "Tab"),
         (command: Execute, value: "alacritty", modifier: ["modkey", "Shift"], key: "Return"),
-        (command: ToggleScratchPad, value: "Alacritty", modifier: ["modkey"], key: "t"),
         (command: Execute, value: "flameshot gui", modifier: ["modkey", "Shift"], key: "p"),
 
-        (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
+        (command: ToggleScratchPad, value: "Alacritty", modifier: ["modkey"], key: "t"),
+        (command: ToggleScratchPad, value: "Notes", modifier: ["modkey"], key: "n"),
+        (command: ToggleScratchPad, value: "Ranger", modifier: ["modkey"], key: "e"),
 
-        (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
+        (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
+        (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "q"),
+
         (command: MoveToLastWorkspace, value: "", modifier: ["modkey", "Shift"], key: "w"),
         (command: SwapTags, value: "", modifier: ["modkey"], key: "w"),
 
         (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "c"),
-
+        (command: MoveWindowTop, value: "", modifier: ["modkey"], key: "Return"),
         (command: MoveWindowUp, value: "", modifier: ["modkey", "Shift"], key: "l"),
         (command: MoveWindowDown, value: "", modifier: ["modkey", "Shift"], key: "k"),
-        (command: MoveWindowTop, value: "", modifier: ["modkey"], key: "Return"),
         (command: FocusWindowUp, value: "", modifier: ["modkey"], key: "l"),
         (command: FocusWindowDown, value: "", modifier: ["modkey"], key: "k"),
 
+        (command: IncreaseMainWidth, value: "5", modifier: ["modkey"], key: "semicolon"),
+        (command: DecreaseMainWidth, value: "5", modifier: ["modkey"], key: "j"),
+        
+        (command: ToggleFullScreen, modifier: ["modkey"], key: "f"),
+        
         (command: NextLayout, value: "", modifier: ["modkey" ], key: "space"),
-
-        (command: FocusWorkspaceNext, value: "", modifier: ["modkey"], key: "semicolon"),
-        (command: FocusWorkspacePrevious, value: "", modifier: ["modkey"], key: "j"),
 
         (command: GotoTag, value: "1", modifier: ["modkey"], key: "1"),
         (command: GotoTag, value: "2", modifier: ["modkey"], key: "2"),
@@ -64,4 +69,12 @@
         (command: MoveToTag, value: "6", modifier: ["modkey", "Shift"], key: "6"),
     ],
     state_path: None,
+    window_rules: [
+      ( window_class: "zoom", spawn_floating: true ),
+      ( window_class: "thunar", spawn_floating: true ),
+      ( window_class: "engrampa", spawn_floating: true ),
+      ( window_class: "jetbrains-idea", spawn_on_tag: 2 ),
+      ( window_class: "slack", spawn_on_tag: 1 ),
+      ( window_class: "telegram-desktop", spawn_on_tag: 6 ),
+    ],
 )
