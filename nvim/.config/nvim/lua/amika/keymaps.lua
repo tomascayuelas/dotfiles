@@ -1,4 +1,6 @@
+local utils = require 'amika.utils'
 local keymap = vim.keymap
+
 
 -- Remap semicolon , as leader key
 keymap.set('n', '<Space>', '<Nop>')
@@ -24,6 +26,10 @@ keymap.set('n', 'd', '"_d')
 -- Increment/Decrement
 keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
+
+-- Move the selection up or down
+keymap.set("v", "K", ":m '>+1<CR>gv=gv")
+keymap.set("v", "L", ":m '<-2<CR>gv=gv")
 
 -- Press jk fast to enter
 keymap.set('i', 'kk', '<ESC>')
@@ -53,3 +59,32 @@ keymap.set('n', '<ESC>', ':noh<CR><CR>')
 
 -- Don't yank on visual paste
 keymap.set('v', 'p', '_dP')
+
+
+-- Telescope
+local builtin = utils.load('telescope.builtin')
+
+local findFiles = function()
+  if vim.fn.isdirectory('.git') ~= 0 then
+    return builtin.git_files()
+  else
+    return builtin.find_files()
+  end
+end
+
+keymap.set('n', '<leader>ff', findFiles, {})
+keymap.set('n', '<leader>fg', builtin.live_grep, {})
+keymap.set('n', '<leader>fm', builtin.marks, {})
+keymap.set('n', '<leader>fb', builtin.buffers, {})
+keymap.set('n', '<leader>fh', builtin.help_tags, {})
+keymap.set('n', '<leader>fp', ':Telescope projects<CR>', {})
+
+-- Search
+keymap.set('n', '<C-f>', '/')
+
+
+-- File Explorer
+keymap.set('n', '<leader>1', ':NvimTreeFindFileToggle<CR>', {})
+
+-- Toggle Term
+keymap.set('n', '<leader>0', ':ToggleTerm<CR>', {})

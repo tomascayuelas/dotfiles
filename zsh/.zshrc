@@ -25,13 +25,15 @@ export ETHERNET="enp0s20f0u1u3"
 export SBT_NATIVE_CLIENT=true
 
 # Aliases
-alias vim="nvim"
-alias e="nvim"
+alias vim="lvim"
+alias e="lvim"
+alias nvim="lvim"
 alias ls="exa"
 alias ll="exa -lhag -snew --icons"
 alias catp="bat -p"
 alias cat="bat"
 alias htop="btop"
+alias docker-compose="docker compose"
 alias edotfiles="nvim $HOME/Sources/dotfiles"
 
 alias luamake=/home/tomascayuelas/.config/nvim/lua/nvim/plugins/lua-language-server/3rd/luamake/luamake
@@ -49,3 +51,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # NVM
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+
+# PYENV
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

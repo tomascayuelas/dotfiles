@@ -1,17 +1,14 @@
 #!/bin/bash
 
 starter() {
-  local apps=(alacritty htop zsh fzf exa jq neovim stow bat arandr rofi nitrogen xorg-xsetroot xclip flameshot xorg-xset)
-  local configs=(alacritty git htop nvim scripts x11 zsh leftwm eww wired)
+  local apps=(htop zsh fzf exa jq neovim stow bat rofi xsetroot xclip flameshot xset ripgrep cmake make fd-find)
+  local configs=(git htop nvim scripts x11 zsh) 
 
   # Installing all applications and other stuff
-  pacmanInstaller "${apps[@]}"
+  dnfInstaller "${apps[@]}"
 
-  # Installing other packages and utils manually
-  nvmInstaller
-  sdkmanInstaller
-  rustupInstaller
-  wiredInstaller
+  # Installing dev tools, packages and utils
+  devToolsInstaller
 
   # Simplele and easy
   linker "${configs[@]}"
@@ -28,21 +25,24 @@ exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
-pacmanInstaller() {
+dnfInstaller() {
   echo ">> Installing applications: ${*}"
-  sudo pacman -S --noconfirm --needed --noprogressbar "$@"
+  sudo dnf install -y "$@"
+}
 
-  if [ ! -d ~/.oh-my-zsh ]; then
-    echo ">> Installing extra packages/plugins/tools: oh-my-zsh"
-    git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
-  fi
+devToolsInstaller() {
+  ohmyzshInstaller
+  nvmInstaller
+  sdkmanInstaller
+  rustupInstaller
+  pyenvInstaller
 }
 
 linker() {
   local array=("$@")
 
   echo ">> Linking config files: ${*}"
-  cd $HOME/Sources/dotfiles
+  cd $HOME/Sources/Own/dotfiles
 
   for config in "${array[@]}"; do
     if [ "$config" = "zsh" ]; then
@@ -53,6 +53,14 @@ linker() {
   done
 }
 
+ohmyzshInstaller() {
+  if [ -d "${HOME}/.oh-my-zsh" ]; then
+    echo "Info: oh-my-zsh already installed."
+  fi
+  
+  git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+}
+
 nvmInstaller() {
   if [ -d "${HOME}/.nvm/.git" ];then
     echo "Info: nvm already installed."
@@ -60,6 +68,15 @@ nvmInstaller() {
   fi
 
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+}
+
+pyenvInstaller() {
+  if [ -d "${HOME}/.pyenv" ];then
+    echo "Info: pyenv already installed."
+    return 1
+  fi
+
+  curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 }
 
 sdkmanInstaller() {
@@ -78,17 +95,6 @@ rustupInstaller() {
   fi
 
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-}
-
-wiredInstaller() {
-  if [ -d "${HOME}/Sources/NotMine/wired-notify" ]; then
-    echo "Info: wired already installed."
-    return 1
-  fi
-
-  git clone https://github.com/Toqozz/wired-notify.git ${HOME}/Sources/NotMine/wired-notify
-  cd ${HOME}/Sources/NotMine/wired-notify && cargo build --release
-  sudo install -s -Dm755 ${HOME}/Sources/NotMine/wired-notify/target/release/wired -t /usr/bin
 }
 
 starter
