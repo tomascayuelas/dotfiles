@@ -4,7 +4,7 @@
 {% assign close = '`)' %}
 {% assign unoccupied = ' (button :class "ws-button" :onclick "leftwm-command \"SendWorkspaceToTag ' %}
 
-{{'(box :class "workspaces" :orientation "h" :space-evenly true :halign "start" :spacing 5'}}
+{{'(box :class "workspaces" :orientation "h" :space-evenly true :halign "start" :spacing 2'}}
 {% for tag in workspace.tags %}
 {% if tag.mine %}
 {{mine_open}}{{workspace.index | append: ' ' | append: tag.index | append: '\"" `'}}{{ tag.name }}{{close}}

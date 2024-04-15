@@ -1,11 +1,13 @@
 #!/bin/bash
 
 starter() {
-  local apps=(htop zsh fzf exa jq neovim stow bat rofi xsetroot xclip flameshot xset ripgrep cmake make fd-find)
-  local configs=(git htop nvim scripts x11 zsh) 
+  local apps=(htop zsh fzf exa jq neovim stow bat rofi xsetroot xclip flameshot xset ripgrep cmake make fd-find alacritty)
+  local libs=(glib gdk-pixbuf2 pango-devel cairo-gobject-devel gtk3-devel gtk-layer-shell-devel)
+  local configs=(git htop nvim scripts x11 zsh leftwm eww rofi alacritty) 
 
   # Installing all applications and other stuff
   dnfInstaller "${apps[@]}"
+  dnfInstaller "${libs[@]}"
 
   # Installing dev tools, packages and utils
   devToolsInstaller
@@ -26,7 +28,7 @@ exists() {
 }
 
 dnfInstaller() {
-  echo ">> Installing applications: ${*}"
+  echo ">> Installing packages: ${*}"
   sudo dnf install -y "$@"
 }
 
